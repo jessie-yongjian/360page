@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+/*A区域样式*/
+
+.sectionA {
+	background-color: deepskyblue;
+}
+
+.sectionA>div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.sectionA .img {
+	width: 251px;
+	height: 186px;
+	background: url("../img/logo.png")no-repeat;
+}
+
+.sectionA .info {
+	width: 772px;
+	height: 49px;
+	background: url("../img/info_1.png")no-repeat;
+}
+
+
+/*B区域*/
+
+.sectionB {
+	background-color: darkgoldenrod;
+}
+
+.sectionB>div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.sectionB .img {
+	/*flex: 1;宽度和flex不同一起写,否则设置的宽度失效*/
+	width: 500px;
+}
+
+.sectionB .info {
+	/*宽度和flex不同一起写,否则设置的宽度失效*/
+	/*flex: 1;*/
+	width: 635px;
+	height: 309px;
+	background: url("../img/info_2.png")no-repeat;
+}
+
+
+/*C区域*/
+
+.sectionC {
+	background-color: orange;
+	position: relative;
+}
+
+.sectionC>div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.sectionC .text {
+	width: 631px;
+	height: 278px;
+	background: url("../img/info_3.png")no-repeat;
+}
+
+.sectionC .circle {
+	width: 450px;
+	height: 450px;
+	/*transform: rotate(45deg);*/
+	transition: all 10s;
+	background: url("../img/circle.png")no-repeat center center;
+}
+
+.sectionC .rocket {
+	width: 210px;
+	position: absolute;
+	left: 200px;
+	height: 208px;
+	background: url("../img/rocket.png")no-repeat;
+}
+
+
+/*D区域*/
+
+.sectionD {
+	background-color: green;
+}
+
+.sectionD>div {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.sectionD .bigBox {
+	width: 529px;
+	height: 438px;
+	position: relative;
+	/* 单独设置自己在副轴的排布 */
+	margin-bottom: 100px;
+	align-self: flex-end;
+}
+
+.sectionD .bigBox .search {
+	width: 508px;
+	height: 42px;
+	background: url("../img/search.png")no-repeat center;
+}
+
+.sectionD .bigBox .search-text {
+	width: 110px;
+	height: 40px;
+	background: url("../img/key.png") no-repeat center;
+}
+
+.sectionD .bigBox .search-info {
+	width: 508px;
+	/*height: 372px;*/
+	background: url("../img/result.png") no-repeat center;
+}
+
+.sectionD .info {
+	width: 612px;
+	height: 299px;
+	background: url("../img/info_4.png")no-repeat;
+}
+
+
+/*E区域*/
+
+.sectionE {
+	background-color: cornflowerblue;
+}
+
+.sectionE>div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.sectionE .top-text {
+	width: 1077px;
+	height: 134px;
+	background: url("../img/info_5.png")no-repeat;
+}
+
+.sectionE .browser {
+	flex: 1;
+	width: 1004px;
+	position: relative;
+	background: url('../img/toolbar.png')no-repeat top, url('../img/extra.png')no-repeat bottom right;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*顶部线*/
+
+.line li:nth-child(1) {
+	width: 100%;
+	height: 4px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+
+/*右部线*/
+
+.line li:nth-child(2) {
+	width: 4px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: white;
+}
+
+
+/*底部线*/
+
+.line li:nth-child(3) {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background-color: white;
+}
+
+/*左部线*/
+
+.line li:nth-child(4) {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background-color: white;
+}
+
+
+/*A动画效果*/
+
+.sectionA .text img {
+	opacity: 0;
+	margin: 0 10px;
+	transition: all 1s;
+}
+
+.animate .text img {
+	opacity: 1;
+	margin: 0;
+}
+
+
+/*B动画效果*/
+
+.sectionB .img img {
+	box-shadow: 0 0 50px red;
+}
+
+.sectionB .img img:nth-child(odd) {
+	transform: translateX(300px) translateY(200px) rotateZ(3600deg);
+	transition: all 1s;
+}
+
+
+/*.sectionB:hover .img img:nth-child(3){
+	transform: translateX(0px) translateY(0px) rotateZ(0deg);
+}*/
+
+.animate .img img:nth-child(odd) {
+	transform: translateX(0px) translateY(0px) rotateZ(0deg);
+}
+
+.animate .img img {
+	box-shadow: 0 0 0px white;
+}
+
+
+/*C动画效果实现*/
+
+.sectionC .rocket {
+	left: -203px;
+	bottom: 0;
+	transition: all 1s;
+	/*box-shadow: 0 0 50px yellow;*/
+}
+
+.animate .rocket {
+	left: 950px;
+	bottom: 210px;
+	/*box-shadow: 0 0 0px white;*/
+}
+
+.animate .circle {
+	/*transform: rotate(45deg);*/
+	animation: runToBack 3s 1.5s infinite linear;
+}
+
+@keyframes runToBack {
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+/*D动画效果*/
+.sectionD .search{
+	position: absolute;
+	left: -900px;
+	transition:  all 1s;
+}
+.sectionD .search-text{
+	position: absolute;
+	left: -900px;
+	transition:  all 2s;
+}
+.sectionD .search-info{
+	position: absolute;
+	height: 0px;
+	transition:  all 3s 2s;
+	
+}
+.animate .search{
+	position: absolute;
+	width:0px;
+	left: 0px;
+	top: 0;
+}
+.animate .search-text{
+	position: absolute;
+	left: 10px;
+	top: 0;
+}
+.animate .search-info{
+	position: absolute;
+	height: 372px;
+	left: 0px;
+	top: 50px;
+}
+
+/*E动画效果*/
+
+.sectionE .line li:nth-child(1){
+	box-shadow: 0 0 0px white;
+	left: -3000px;
+	opacity: 0;
+	transition:  all 1s;
+}
+.animate .line li:nth-child(1){
+	left: 0px;
+	opacity: 1;
+	box-shadow: 0 0 50px yellow;
+	
+}
+.sectionE .line li:nth-child(2){
+	box-shadow: 0 0 0px white;
+	top: -3000px;
+	/*transform:translateY(-3000px);*/
+	opacity: 0;
+}
+.animate .line li:nth-child(2){
+	/*transform:translateY(0px);*/
+	top: 0px;
+	opacity: 1;
+	box-shadow: 0 0 50px yellow;
+	transition:  all 1s;
+	
+}
+/*如下两根线使用定位来设置无效,因此改用C3属性transform:translate*/
+.sectionE .line li:nth-child(3){
+	box-shadow: 0 0 0px white;
+	/*right: -3000px;*/
+	transform:translateX(3000px);
+	opacity: 0;
+	transition:  all 1s;
+}
+.animate .line li:nth-child(3){
+	/*right: 0px;*/
+	transform:translateX(0px);
+	opacity: 1;
+	box-shadow: 0 0 50px yellow;
+	
+}
+.sectionE .line li:nth-child(4){
+	box-shadow: 0 0 0px white;
+	/*bottom: -3000px;*/
+	transform:translateY(3000px);
+	opacity: 0;
+	/*写在自身事件元素上过渡效果发生消失都会出现*/
+	transition:  all 0s;
+}
+.animate .line li:nth-child(4){
+	transform:translateY(0px);
+	/*bottom: 0px;*/
+	opacity: 1;
+	box-shadow: 0 0 50px yellow;
+	/*持续的时间一般写在目标代码里面*/
+	transition:  all 1s;
+}
